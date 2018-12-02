@@ -3748,23 +3748,18 @@ Prefab:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 4390358031981658, guid: b91286c370dbc904381c12587e83ce6d, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 13.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4390358031981658, guid: b91286c370dbc904381c12587e83ce6d, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 13.5
-      objectReference: {fileID: 0}
     - target: {fileID: 114275571149143948, guid: b91286c370dbc904381c12587e83ce6d,
         type: 2}
       propertyPath: ammoTracker
       value: 
       objectReference: {fileID: 1235042727}
-    - target: {fileID: 114275571149143948, guid: b91286c370dbc904381c12587e83ce6d,
-        type: 2}
-      propertyPath: maxAmmo
-      value: 6
+    - target: {fileID: 4698088692109448, guid: b91286c370dbc904381c12587e83ce6d, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4698088692109448, guid: b91286c370dbc904381c12587e83ce6d, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.034
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b91286c370dbc904381c12587e83ce6d, type: 2}

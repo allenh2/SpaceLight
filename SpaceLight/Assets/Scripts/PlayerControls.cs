@@ -85,6 +85,10 @@ public class PlayerControls : MonoBehaviour {
             curAnim = WALK_ANIM;
             //spriteRenderer.flipX = false;
         }
+        if (Input.GetKey(KeyCode.R) && currentAmmo != maxAmmo)
+        {
+            StartCoroutine(Reload());
+        }
         direction.Normalize();
         direction *= 50;
         //direction.Normalize();

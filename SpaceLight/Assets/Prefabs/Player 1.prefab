@@ -72,7 +72,7 @@ Transform:
   m_GameObject: {fileID: 1614164300751960}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.000000058038, y: -0.00000011608, z: 0}
-  m_LocalScale: {x: 13, y: 13, z: 1}
+  m_LocalScale: {x: 13.5, y: 13.5, z: 1}
   m_Children: []
   m_Father: {fileID: 4743761633052940}
   m_RootOrder: 1
@@ -216,9 +216,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22e4bb06fac40844da9cede3a0886d13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 4
   projectile: {fileID: 1375821448689456, guid: ed59f8525afe71c48bbfee33a861634b, type: 2}
   packsCollected: 0
+  maxAmmo: 6
+  ammoTracker: {fileID: 0}
+  reloadTime: 1
 --- !u!114 &114506398446034966
 MonoBehaviour:
   m_ObjectHideFlags: 1
