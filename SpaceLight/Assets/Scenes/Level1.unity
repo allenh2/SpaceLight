@@ -1253,6 +1253,17 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114135082261645310, guid: 37117ba8497a0e64dbff16720dcaa05e,
+        type: 2}
+      propertyPath: energyPack
+      value: 
+      objectReference: {fileID: 1763732247851390, guid: cbf6e8c93aeeabc4d986ada25eaa96fd,
+        type: 2}
+    - target: {fileID: 114135082261645310, guid: 37117ba8497a0e64dbff16720dcaa05e,
+        type: 2}
+      propertyPath: canDrop
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37117ba8497a0e64dbff16720dcaa05e, type: 2}
   m_IsPrefabAsset: 0

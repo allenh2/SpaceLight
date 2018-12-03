@@ -12,7 +12,6 @@ public class Destructibles : MonoBehaviour {
 
     public GameObject explosion;
     public Transform crate;
-
 	// Use this for initialization
 	void Start () {
         damageSound = Resources.Load<AudioClip>("enemytakedamage");

@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour {
 
     private Image healthBar;
-    private float maxHealth = 100f;
+    private float maxHealth = 200f;
     public static float health;
     public GameObject endLevel;
     // Use this for initialization
@@ -22,7 +22,6 @@ public class PlayerHealth : MonoBehaviour {
         if (health <= 0) { //restart level
             //go to lose page
             endLevel.SetActive(true);
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 	}
 }

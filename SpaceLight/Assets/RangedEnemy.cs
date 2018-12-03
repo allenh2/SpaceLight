@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+// Note that will need to start at least triggerDistance from player to not shoot during dialogue.
 public class RangedEnemy : MonoBehaviour {
 
     public RangedProjectile projectile;
