@@ -20,12 +20,4 @@ public class WinDetector : MonoBehaviour {
         }
 	}
 
-    void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.name == "Player")
-        {
-            collision.gameObject.SetActive(false);
-            endLevel.SetActive(true);
-        }
-    }
 }

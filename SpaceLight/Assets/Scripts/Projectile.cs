@@ -27,8 +27,8 @@ public class Projectile : MonoBehaviour
         transform.Translate(direction * speed * Time.deltaTime);
     }
 
-    void OnBecameInvisible()
+    /*void OnBecameInvisible()
     {
         Destroy(this.gameObject);
-    }
+    }*/
 }

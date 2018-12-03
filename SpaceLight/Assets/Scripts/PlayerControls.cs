@@ -44,6 +44,7 @@ public class PlayerControls : MonoBehaviour {
         curAnim = STILL_ANIM;
         getMovement();
         Move();
+
         //movement code
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.rotation = Quaternion.LookRotation(Vector3.forward, mousePos - transform.position);
@@ -71,7 +72,6 @@ public class PlayerControls : MonoBehaviour {
         {
             direction += Vector2.left;
             curAnim = WALK_ANIM;
-            //spriteRenderer.flipX = true;
         }
 
         if (Input.GetKey(KeyCode.S))
@@ -83,7 +83,6 @@ public class PlayerControls : MonoBehaviour {
         {
             direction += Vector2.right;
             curAnim = WALK_ANIM;
-            //spriteRenderer.flipX = false;
         }
         if (Input.GetKey(KeyCode.R) && currentAmmo != maxAmmo)
         {
@@ -91,7 +90,6 @@ public class PlayerControls : MonoBehaviour {
         }
         direction.Normalize();
         direction *= 50;
-        //direction.Normalize();
     }
 
     private void getShot()
