@@ -36,8 +36,7 @@ public class BasicEnemyTracking : MonoBehaviour {
             }
             
             direction.Normalize();
-            direction *= 50;
-            enemy.velocity = speed * Time.deltaTime * direction;
+            enemy.velocity = speed * direction;
             float rotation = (Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg) - 180.0f;
             transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotation);
         }

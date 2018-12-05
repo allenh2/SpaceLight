@@ -317,7 +317,7 @@ MonoBehaviour:
   triggered: 0
   turnedOn: 0
   triggerDistance: 20
-  fireRate: 0.5
+  fireRate: 1
 --- !u!212 &212000213037579300
 SpriteRenderer:
   m_ObjectHideFlags: 1

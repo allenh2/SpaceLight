@@ -294,7 +294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shoot: {fileID: 8300000, guid: 97be7edaf4daa1a479ea7446e2488d40, type: 3}
-  speed: 12
+  speed: 15
 --- !u!114 &114898789077974534
 MonoBehaviour:
   m_ObjectHideFlags: 1

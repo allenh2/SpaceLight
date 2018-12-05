@@ -10,7 +10,10 @@ public class DialogueManager : MonoBehaviour {
     public Text buttonText;
     // Use this for initialization
     public GameObject player;
-	void Start () {
+    private bool firstDebrief = true;
+    private bool allFinished = false;
+    private float allFinishedTime;
+    void Start () {
         animator.SetBool("IsOpen", true);
         sentences = new Queue<string>();
 	}
@@ -25,18 +28,34 @@ public class DialogueManager : MonoBehaviour {
         DisplayNextSentence();
 
     }
+    public void ReopenDialogueBox(){
+        animator.SetBool("IsOpen", true);
+        DisplayNextSentence();
+    }
     public void DisplayNextSentence(){
-
-        if(sentences.Count == 0){
+        if(firstDebrief && sentences.Count == 1){
+            Debug.Log("first condition passed");
             EndDialogue();
+            return;
+        }
+        if(allFinished){
+            if(Time.time - allFinishedTime > 5) animator.SetBool("IsOpen", false);
             return;
         }
         string sentence = sentences.Dequeue();
 
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
-        if(sentences.Count == 0){
+        if(sentences.Count == 1){
             buttonText.text = "Let's start";
+        }
+        if (sentences.Count == 0)
+        {
+            buttonText.text = "";
+            Debug.Log("count is 0");
+            allFinished = true;
+            allFinishedTime = Time.time;
+            return;
         }
     }
     IEnumerator TypeSentence(string sentence){
@@ -47,8 +66,10 @@ public class DialogueManager : MonoBehaviour {
         }
     }
     public void EndDialogue(){
+
         animator.SetBool("IsOpen", false);
         FindObjectOfType<PlayerControls>().startControl();
         FindObjectOfType<timer>().startCounting();
+        firstDebrief = false;
     }
 }

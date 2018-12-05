@@ -9,5 +9,6 @@ public class LevelComplete : MonoBehaviour {
     }
     public void ReloadLevel(){
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
     }
 }

@@ -12,6 +12,7 @@ public class PlayerControls : MonoBehaviour {
     public GameObject projectile;
     public int packsCollected;
     private Rigidbody2D player;
+    public GameObject goal;
     private bool isMoving;
 
     public int maxAmmo = 5;
@@ -28,14 +29,21 @@ public class PlayerControls : MonoBehaviour {
     private int curAnim = 0;
     private SpriteRenderer spriteRenderer;
     private bool gameStarted = false;
+    public bool gameOver = false;
+    public static AudioClip reloadSound;
+    static AudioSource source;
+    private bool soundPlayed;
 	// Use this for initialization
 	void Start () {
+        source = GetComponent<AudioSource>();
+        reloadSound = Resources.Load<AudioClip>("reload");
         player = GetComponent<Rigidbody2D>();
         animator = this.GetComponent<Animator>();
         spriteRenderer = this.GetComponent<SpriteRenderer>();
         packsCollected = 0;
         currentAmmo = maxAmmo;
         ammoTracker.text = "Ammo: " + currentAmmo + "/" + maxAmmo;
+        goal.SetActive(false);
     }
 	
 	// Update is called once per frame
@@ -56,7 +64,8 @@ public class PlayerControls : MonoBehaviour {
     }
     public void Move()
     {
-        player.velocity = speed * Time.deltaTime * direction;
+        //player.velocity = speed * Time.deltaTime * direction;
+        player.velocity = speed * direction;
     }
 
     private void getMovement()
@@ -84,12 +93,18 @@ public class PlayerControls : MonoBehaviour {
             direction += Vector2.right;
             curAnim = WALK_ANIM;
         }
-        if (Input.GetKey(KeyCode.R) && currentAmmo != maxAmmo)
+        if (Input.GetKeyDown(KeyCode.R) && currentAmmo != maxAmmo)
         {
-            StartCoroutine(Reload());
+            if (currentAmmo != 0)
+            {
+                currentAmmo = 0;
+                soundPlayed = true;
+                StartCoroutine(Reload());
+                soundPlayed = false;
+            }
         }
         direction.Normalize();
-        direction *= 50;
+        //direction *= 50;
     }
 
     private void getShot()
@@ -113,6 +128,7 @@ public class PlayerControls : MonoBehaviour {
     {
         ammoTracker.text = "Reloading...";
         isReloading = true;
+        source.PlayOneShot(reloadSound);
         yield return new WaitForSeconds(reloadTime);
         currentAmmo = maxAmmo;
         isReloading = false;

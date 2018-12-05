@@ -16,7 +16,26 @@ public class RangedProjectile : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        source = GetComponent<AudioSource>();
+        shootSound = Resources.Load<AudioClip>("enemyshoot");
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        Vector2 distance = player.transform.position - transform.position;
+        if (distance.magnitude <= 15)
+        {
+            if (distance.magnitude >= 10)
+            {
+                source.volume = 0.1f;
+            }
+            else if (distance.magnitude >= 5)
+            {
+                source.volume = 0.4f;
+            }
+            else
+            {
+                source.volume = 1;
+            }
+            source.PlayOneShot(shootSound);
+        }
         direction = player.position - transform.position;
         direction.Normalize();
     }

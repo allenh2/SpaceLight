@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -279,9 +279,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Credits: \nAstronaut(royalty free):https://ubisafe.org/explore/astronaut-transparent-8-bit/#gal_post_5163_astronaut-transparent-8-bit.gif\nBackground:https://dribbble.com/shots/2630682-Sci-fi-pixel-art-tiles
+  m_Text: "Credits: \nAstronaut:https://ubisafe.org/explore/astronaut-transparent-8-bit/#gal_post_5163_astronaut-transparent-8-bit.gif\nBackground:https://dribbble.com/shots/2630682-Sci-fi-pixel-art-tiles
     \ by Artem Chernyshev\nEnergy ball(Sean Warton):https://dribbble.com/shots/983150-Energy-Ball\nAlien:http://images.clipartpanda.com/alien-clipart-alien15.png\nAudio:
-    https://opengameart.org/content/512-sound-effects-8-bit-style"
+    https://opengameart.org/content/512-sound-effects-8-bit-style\nReload: http://soundbible.com/415-Machine-Gun-Pop-In-Clip.html"
 --- !u!222 &775951512
 CanvasRenderer:
   m_ObjectHideFlags: 0

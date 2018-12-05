@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Energy Ball
   - Repair Pack
+  - Goal
   layers:
   - Default
   - TransparentFX

@@ -14,16 +14,16 @@ public class RangedEnemy : MonoBehaviour {
     private Vector2 direction;
     public float triggerDistance;
     public float fireRate = 1;
-
 	// Use this for initialization
-	void Start () {
+    
+
+    void Start() {
         enemy = GetComponent<Rigidbody2D>().GetComponent<Transform>(); ;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         triggered = false;
         turnedOn = false;
+        // Update is called once per frame
     }
-	
-	// Update is called once per frame
 	void Update () {
         direction = player.position - enemy.position;
         if (direction.magnitude <= triggerDistance && !turnedOn)
@@ -41,6 +41,7 @@ public class RangedEnemy : MonoBehaviour {
 
     void Shoot()
     {
+        
         RangedProjectile bullet = Instantiate(projectile, enemy.position, Quaternion.identity);
         projectile.parent = this.gameObject;
         Physics2D.IgnoreCollision(bullet.GetComponent<Collider2D>(), GetComponent<Collider2D>());
