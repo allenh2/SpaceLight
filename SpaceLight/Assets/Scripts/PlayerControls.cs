@@ -20,6 +20,7 @@ public class PlayerControls : MonoBehaviour {
     private int currentAmmo;
     public float reloadTime = 1f;
     private bool isReloading = false;
+    public Transform spriteMask;
 
     //Initial variables needed
     private Animator animator;
@@ -33,6 +34,8 @@ public class PlayerControls : MonoBehaviour {
     public static AudioClip reloadSound;
     static AudioSource source;
     private bool soundPlayed;
+    private bool cheatsOn;
+
 	// Use this for initialization
 	void Start () {
         source = GetComponent<AudioSource>();
@@ -44,6 +47,7 @@ public class PlayerControls : MonoBehaviour {
         currentAmmo = maxAmmo;
         ammoTracker.text = "Ammo: " + currentAmmo + "/" + maxAmmo;
         goal.SetActive(false);
+        cheatsOn = false;
     }
 	
 	// Update is called once per frame
@@ -101,6 +105,19 @@ public class PlayerControls : MonoBehaviour {
                 soundPlayed = true;
                 StartCoroutine(Reload());
                 soundPlayed = false;
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            if (cheatsOn)
+            {
+                spriteMask.localScale = new Vector3(13, 13, 1);
+                cheatsOn = false;
+            }
+            else
+            {
+                spriteMask.localScale += new Vector3(1000, 1000, 0);
+                cheatsOn = true;
             }
         }
         direction.Normalize();

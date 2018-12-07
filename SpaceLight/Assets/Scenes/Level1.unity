@@ -3520,6 +3520,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b732f4b4555b4227826b6a61d3633c0, type: 2}
   m_IsPrefabAsset: 0
+--- !u!4 &463543326 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4390358031981658, guid: b91286c370dbc904381c12587e83ce6d,
+    type: 2}
+  m_PrefabInternal: {fileID: 544513038}
 --- !u!1001 &471393269
 Prefab:
   m_ObjectHideFlags: 0
@@ -4512,6 +4517,11 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 114275571149143948, guid: b91286c370dbc904381c12587e83ce6d,
+        type: 2}
+      propertyPath: spriteMask
+      value: 
+      objectReference: {fileID: 463543326}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b91286c370dbc904381c12587e83ce6d, type: 2}
   m_IsPrefabAsset: 0
